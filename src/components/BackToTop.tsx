@@ -1,48 +1,51 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FiArrowUp } from 'react-icons/fi'
+import React, { useState, useEffect } from "react";
+import { FiArrowUp } from "react-icons/fi"; // Latest react-icons me available
 
-const BackToTop = () => {
-  const [isVisible, setIsVisible] = useState(false)
+const BackToTop: React.FC = () => {
+  const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+  const toggleVisibility = () => {
+    if (window.scrollY > 300) {
+      setVisible(true);
+    } else {
+      setVisible(false);
     }
-
-    window.addEventListener('scroll', toggleVisibility)
-    return () => window.removeEventListener('scroll', toggleVisibility)
-  }, [])
+  };
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
-    })
-  }
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  if (!visible) return null;
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-40 p-3 rounded-full glass-effect neon-glow-pink hover:shadow-lg transition-all"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          aria-label="Back to top"
-        >
-          <FiArrowUp className="w-6 h-6 text-neon-pink" />
-        </motion.button>
-      )}
-    </AnimatePresence>
-  )
-}
+    <button
+      onClick={scrollToTop}
+      style={{
+        position: "fixed",
+        bottom: "40px",
+        right: "40px",
+        backgroundColor: "#000",
+        color: "#fff",
+        border: "none",
+        padding: "10px 15px",
+        borderRadius: "50%",
+        cursor: "pointer",
+        zIndex: 1000,
+      }}
+      aria-label="Back to Top"
+    >
+      <FiArrowUp size={24} />
+    </button>
+  );
+};
 
-export default BackToTop
+export default BackToTop;
