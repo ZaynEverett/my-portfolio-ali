@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { FiArrowUp } from "react-icons/fi"; // Latest react-icons me available
+import { FiArrowUpCircle } from "react-icons/fi"; // Latest react-icons
 
 const BackToTop: React.FC = () => {
   const [visible, setVisible] = useState(false);
 
+  // Show button after scrolling 300px
   const toggleVisibility = () => {
-    if (window.scrollY > 300) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
+    setVisible(window.scrollY > 300);
   };
 
+  // Smooth scroll to top
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -36,14 +31,14 @@ const BackToTop: React.FC = () => {
         backgroundColor: "#000",
         color: "#fff",
         border: "none",
-        padding: "10px 15px",
+        padding: "10px",
         borderRadius: "50%",
         cursor: "pointer",
         zIndex: 1000,
       }}
       aria-label="Back to Top"
     >
-      <FiArrowUp size={24} />
+      <FiArrowUpCircle size={24} /> {/* Correct icon */}
     </button>
   );
 };
