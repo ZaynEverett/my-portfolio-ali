@@ -2,6 +2,7 @@ declare module 'react-icons/fi' {
   export const FiMenu: any
   export const FiX: any
   export const FiArrowDown: any
+  export const FiChevronUp: any
   export const FiExternalLink: any
   export const FiGithub: any
   export const FiCode: any
@@ -24,7 +25,13 @@ declare module 'react-icons/fa' {
   export const FaTwitter: any
 }
 
+declare module 'react-icons/md' {
+  export const MdVolumeUp: any
+  export const MdVolumeOff: any
+}
+
 declare module '*.png'
 declare module '*.jpg'
 declare module '*.jpeg'
 declare module '*.svg'
+declare module '*.css'
