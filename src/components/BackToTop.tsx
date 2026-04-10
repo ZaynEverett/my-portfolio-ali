@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUp } from "react-icons/fi";
 
 const BackToTop: React.FC = () => {
   const [visible, setVisible] = useState(false);
 
-  // Show button after scrolling 300px
   const toggleVisibility = () => {
     setVisible(window.scrollY > 300);
   };
 
-  // Smooth scroll to top
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -38,7 +36,7 @@ const BackToTop: React.FC = () => {
       }}
       aria-label="Back to Top"
     >
-      <FiArrowUpRight size={24} />
+      <FiArrowUp size={24} />
     </button>
   );
 };
