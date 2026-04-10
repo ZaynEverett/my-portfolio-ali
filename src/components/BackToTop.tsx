@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FiArrowUpCircle } from "react-icons/fi"; // Latest react-icons
+import { FiArrowUpRight } from "react-icons/fi";
 
 const BackToTop: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -38,7 +38,7 @@ const BackToTop: React.FC = () => {
       }}
       aria-label="Back to Top"
     >
-      <FiArrowUpCircle size={24} /> {/* Correct icon */}
+      <FiArrowUpRight size={24} />
     </button>
   );
 };
