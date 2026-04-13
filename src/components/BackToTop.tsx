@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FiArrowUp } from "react-icons/fi";
 
 const BackToTop: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -29,14 +28,13 @@ const BackToTop: React.FC = () => {
         backgroundColor: "#000",
         color: "#fff",
         border: "none",
-        padding: "10px",
-        borderRadius: "50%",
+        padding: "10px 15px",
+        borderRadius: "8px",
         cursor: "pointer",
         zIndex: 1000,
       }}
-      aria-label="Back to Top"
     >
-      <FiArrowUp size={24} />
+      ↑
     </button>
   );
 };
