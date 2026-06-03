@@ -30,9 +30,9 @@ const Skills = () => {
         { name: 'CSS', level: 90 },
         { name: 'JavaScript', level: 92 },
         { name: 'Bootstrap', level: 88 },
-        { name: 'Tailwind CSS', level: 93 },
-        { name: 'React', level: 88 },
-        { name: 'Vue', level: 85 },
+        { name: 'WordPress', level: 93 },
+        { name: 'Elementor', level: 88 }
+        
       ],
     },
     {
@@ -104,10 +104,10 @@ const Skills = () => {
             <motion.div
               key={idx}
               variants={itemVariants}
-              className="glass-effect p-8 rounded-2xl group hover:shadow-2xl transition-all duration-300"
+              className="glass-effect p-6 sm:p-8 rounded-2xl group hover:shadow-2xl transition-all duration-300"
             >
               {/* Category Header */}
-              <h3 className={`text-2xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-6`}>
+              <h3 className={`text-xl sm:text-2xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-6`}>
                 {category.category}
               </h3>
 
@@ -122,7 +122,7 @@ const Skills = () => {
                     className="group/skill"
                   >
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-semibold text-gray-300">{skill.name}</span>
+                      <span className="text-xs sm:text-sm font-semibold text-gray-300">{skill.name}</span>
                       <span className="text-xs text-neon-pink font-bold">{skill.level}%</span>
                     </div>
 
@@ -144,26 +144,27 @@ const Skills = () => {
 
         {/* Circular Indicators - Alternative View */}
         <motion.div
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
+          className="mt-16 sm:mt-20 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
         >
           {[
-            { name: 'React', level: 88 },
-            { name: 'JavaScript', level: 92 },
-            { name: 'Tailwind', level: 93 },
-            { name: 'PHP', level: 85 },
-            { name: 'Laravel', level: 80 },
-            { name: 'MySQL', level: 87 },
+          { name: 'WordPress', level: 92 },
+          { name: 'Elementor', level: 92 },
+          { name: 'JavaScript', level: 86 },
+          { name: 'MySQL', level: 87 },
+          { name: 'PHP', level: 75 },
+          { name: 'Laravel', level: 75 }
+      
           ].map((skill, idx) => (
             <motion.div
               key={idx}
               whileHover={{ scale: 1.1 }}
               className="flex flex-col items-center"
             >
-              <div className="relative w-24 h-24 mb-2">
+              <div className="relative w-16 sm:w-20 md:w-24 h-16 sm:h-20 md:h-24 mb-2">
                 {/* Background Circle */}
                 <div className="absolute inset-0 rounded-full glass-effect border-2 border-neon-pink border-opacity-30" />
 
@@ -204,10 +205,10 @@ const Skills = () => {
 
                 {/* Center Text */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-lg font-bold text-neon-pink">{skill.level}%</span>
+                  <span className="text-sm sm:text-base md:text-lg font-bold text-neon-pink">{skill.level}%</span>
                 </div>
               </div>
-              <p className="text-center text-sm font-semibold text-gray-300">{skill.name}</p>
+              <p className="text-center text-xs sm:text-sm font-semibold text-gray-300">{skill.name}</p>
             </motion.div>
           ))}
         </motion.div>

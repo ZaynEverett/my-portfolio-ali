@@ -139,15 +139,15 @@ const Services = () => {
 
         {/* Stats Section */}
         <motion.div
-          className="mt-20 grid grid-cols-3 gap-8"
+          className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="text-center glass-effect p-8 rounded-2xl">
+          <div className="text-center glass-effect p-6 sm:p-8 rounded-2xl h-full flex flex-col items-center justify-center">
             <motion.p
-              className="text-4xl font-bold text-neon-pink mb-2"
+              className="text-3xl sm:text-4xl lg:text-4xl font-bold text-neon-pink mb-2"
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ type: 'spring', stiffness: 100 }}
@@ -155,11 +155,11 @@ const Services = () => {
             >
               50+
             </motion.p>
-            <p className="text-gray-400">Projects Completed</p>
+            <p className="text-xs sm:text-sm lg:text-base text-gray-400">Projects Completed</p>
           </div>
-          <div className="text-center glass-effect p-8 rounded-2xl">
+          <div className="text-center glass-effect p-6 sm:p-8 rounded-2xl h-full flex flex-col items-center justify-center">
             <motion.p
-              className="text-4xl font-bold text-neon-blue mb-2"
+              className="text-3xl sm:text-4xl lg:text-4xl font-bold text-neon-blue mb-2 break-words"
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ type: 'spring', stiffness: 100, delay: 0.1 }}
@@ -167,11 +167,11 @@ const Services = () => {
             >
               100%
             </motion.p>
-            <p className="text-gray-400">Client Satisfaction</p>
+            <p className="text-xs sm:text-sm lg:text-base text-gray-400">Client Satisfaction</p>
           </div>
-          <div className="text-center glass-effect p-8 rounded-2xl">
+          <div className="text-center glass-effect p-6 sm:p-8 rounded-2xl h-full flex flex-col items-center justify-center sm:col-span-2 lg:col-span-1">
             <motion.p
-              className="text-4xl font-bold text-neon-purple mb-2"
+              className="text-3xl sm:text-4xl lg:text-4xl font-bold text-neon-purple mb-2"
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ type: 'spring', stiffness: 100, delay: 0.2 }}
@@ -179,7 +179,7 @@ const Services = () => {
             >
               5+
             </motion.p>
-            <p className="text-gray-400">Years Experience</p>
+            <p className="text-xs sm:text-sm lg:text-base text-gray-400">Years Experience</p>
           </div>
         </motion.div>
       </div>

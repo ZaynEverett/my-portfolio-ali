@@ -3,27 +3,29 @@ import { FiAward, FiBook } from 'react-icons/fi'
 
 const Education = () => {
   const education = [
-    {
-      id: 1,
-      degree: 'Bachelor of Science',
-      field: 'Computer Science',
-      institution: 'University Name',
-      year: '2020 - Present',
-      description: 'Pursuing a degree in Computer Science with focus on web development and software engineering',
-      color: 'from-neon-pink to-neon-purple',
-      icon: FiBook,
-    },
-    {
-      id: 2,
-      degree: 'Advanced Certificate',
-      field: 'Web Development',
-      institution: 'Online Learning Platform',
-      year: '2021',
-      description: 'Completed comprehensive web development course covering HTML, CSS, JavaScript, React, and backend technologies',
-      color: 'from-neon-blue to-neon-pink',
-      icon: FiAward,
-    },
-  ]
+  {
+    id: 1,
+    degree: 'Software Engineering',
+    field: '3rd Semester (In Progress)',
+    institution: 'Aptech Learning Pakistan',
+    year: '2025 - Present',
+    description:
+      'Currently pursuing Software Engineering with focus on Web Development, Database Management, Programming Fundamentals, and Software Development. Building practical projects using PHP, Laravel, MySQL, SQL Server, JavaScript, and WordPress.',
+    color: 'from-neon-pink to-neon-purple',
+    icon: FiBook,
+  },
+  {
+    id: 2,
+    degree: 'Professional Skill Development',
+    field: 'Self-Learning & Practical Projects',
+    institution: 'Online Learning & Hands-On Experience',
+    year: '2024 - Present',
+    description:
+      'Continuously improving skills through personal projects, portfolio development, GitHub repositories, WordPress customization, SEO optimization, and modern web development technologies.',
+    color: 'from-neon-blue to-neon-pink',
+    icon: FiAward,
+  },
+]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -135,21 +137,21 @@ const Education = () => {
           <h3 className="text-2xl font-bold text-white mb-6">Continuous Learning</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
-                title: 'Online Courses',
-                count: '15+',
-                description: 'Completed courses on web development, design, and modern frameworks',
-              },
-              {
-                title: 'Certifications',
-                count: '8',
-                description: 'Professional certifications in various web technologies and tools',
-              },
-              {
-                title: 'Projects',
-                count: '50+',
-                description: 'Practical projects building real-world applications',
-              },
+           {
+  title: 'Current Semester',
+  count: '3rd',
+  description: 'Currently pursuing Software Engineering at Aptech Learning Pakistan',
+},
+{
+  title: 'Technical Skills',
+  count: '10+',
+  description: 'Hands-on experience with web development, databases, WordPress, Git/GitHub, and SEO',
+},
+{
+  title: 'Projects',
+  count: '20+',
+  description: 'Personal and academic projects focused on web applications and responsive websites',
+},
             ].map((item, idx) => (
               <motion.div
                 key={idx}

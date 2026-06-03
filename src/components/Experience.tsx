@@ -3,35 +3,35 @@ import { motion } from 'framer-motion'
 const Experience = () => {
   const experiences = [
     {
-      id: 1,
-      title: 'Full Stack Web Developer',
-      company: 'Tech Startup Company',
-      duration: 'Jan 2022 - Present',
-      description:
-        'Developing full-stack web applications using React, Laravel, and MySQL. Leading frontend development and implementing responsive designs with modern animation libraries.',
-      skills: ['React', 'Laravel', 'MySQL', 'Tailwind CSS'],
-      color: 'from-neon-pink to-neon-purple',
-    },
-    {
-      id: 2,
-      title: 'Frontend Developer Intern',
-      company: 'Digital Solutions Inc.',
-      duration: 'Jun 2021 - Dec 2021',
-      description:
-        'Built responsive user interfaces using React and Vue.js. Collaborated with design team to implement UI/UX improvements and optimize performance.',
-      skills: ['React', 'Vue.js', 'JavaScript', 'CSS'],
-      color: 'from-neon-blue to-neon-pink',
-    },
-    {
-      id: 3,
-      title: 'Junior Web Developer',
-      company: 'Creative Agency',
-      duration: 'Mar 2021 - May 2021',
-      description:
-        'Developed website features using HTML, CSS, and JavaScript. Maintained and updated multiple client websites, ensuring cross-browser compatibility.',
-      skills: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-      color: 'from-neon-purple to-neon-blue',
-    },
+    id: 1,
+    title: 'Web Development Student',
+    company: 'Aptech Learning Pakistan',
+    duration: '2025 - Present',
+    description:
+      'Currently studying Software Engineering and building responsive websites and web applications using modern web technologies. Working on personal and academic projects to strengthen frontend and backend development skills.',
+    skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+    color: 'from-neon-pink to-neon-purple',
+  },
+  {
+    id: 2,
+    title: 'Personal Projects Developer',
+    company: 'Self-Learning & Freelance Practice',
+    duration: '2025 - Present',
+    description:
+      'Developed multiple personal projects including portfolio websites, CRUD applications, and responsive business websites. Experienced with Git/GitHub version control and deployment platforms.',
+    skills: ['Laravel', 'Git', 'GitHub', 'SQL Server', 'Responsive Design'],
+    color: 'from-neon-blue to-neon-pink',
+  },
+  {
+    id: 3,
+    title: 'WordPress & SEO Enthusiast',
+    company: 'Independent Learning',
+    duration: '2024 - Present',
+    description:
+      'Working with WordPress themes, Elementor, plugins, website customization, and SEO optimization. Managing website content and improving website performance and user experience.',
+    skills: ['WordPress', 'Elementor', 'SEO', 'Theme Customization'],
+    color: 'from-neon-purple to-neon-blue',
+  },
   ]
 
   const containerVariants = {
@@ -80,25 +80,25 @@ const Experience = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Central Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-neon-pink via-neon-purple to-neon-blue opacity-30" />
+          {/* Central Line - Hidden on mobile */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-neon-pink via-neon-purple to-neon-blue opacity-30" />
 
           {/* Experience Items */}
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.id}
               variants={itemVariants}
-              className={`mb-8 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+              className={`mb-8 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} md:${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
             >
               {/* Left/Right Content */}
-              <div className="w-1/2 px-8">
+              <div className="w-full md:w-1/2 px-4 md:px-8">
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="glass-effect p-6 rounded-2xl hover:shadow-2xl transition-all"
+                  className="glass-effect p-4 md:p-6 rounded-2xl hover:shadow-2xl transition-all"
                 >
                   {/* Timeline Dot */}
                   <motion.div
-                    className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-br ${exp.color} border-4 border-dark-bg`}
+                    className={`hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-br ${exp.color} border-4 border-dark-bg`}
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -106,14 +106,14 @@ const Experience = () => {
                   />
 
                   {/* Title and Company */}
-                  <h3 className="text-xl font-bold text-white mb-2">{exp.title}</h3>
-                  <p className={`text-sm bg-gradient-to-r ${exp.color} bg-clip-text text-transparent font-semibold mb-2`}>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2">{exp.title}</h3>
+                  <p className={`text-xs md:text-sm bg-gradient-to-r ${exp.color} bg-clip-text text-transparent font-semibold mb-2`}>
                     {exp.company}
                   </p>
                   <p className="text-xs text-gray-400 mb-4">{exp.duration}</p>
 
                   {/* Description */}
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-300 text-xs md:text-sm leading-relaxed mb-4">
                     {exp.description}
                   </p>
 
@@ -122,7 +122,7 @@ const Experience = () => {
                     {exp.skills.map((skill, idx) => (
                       <span
                         key={idx}
-                        className="text-xs px-3 py-1 bg-dark-secondary rounded-full text-neon-pink border border-neon-pink border-opacity-30"
+                        className="text-xs px-2 py-1 md:px-3 md:py-1 bg-dark-secondary rounded-full text-neon-pink border border-neon-pink border-opacity-30"
                       >
                         {skill}
                       </span>

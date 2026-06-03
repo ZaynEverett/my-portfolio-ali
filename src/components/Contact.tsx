@@ -110,14 +110,14 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col gap-8"
+            className="flex flex-col gap-6 lg:gap-8"
           >
             {/* Contact Cards */}
             {contactInfo.map((info, idx) => {
@@ -128,14 +128,14 @@ const Contact = () => {
                   variants={itemVariants}
                   href={info.link}
                   whileHover={{ x: 10 }}
-                  className={`glass-effect p-6 rounded-2xl flex gap-4 hover:shadow-2xl transition-all cursor-pointer group ${info.color}`}
+                  className={`glass-effect p-4 sm:p-6 rounded-2xl flex gap-4 hover:shadow-2xl transition-all cursor-pointer group ${info.color}`}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-dark-secondary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <IconComponent className="w-6 h-6 text-neon-pink" />
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-dark-secondary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <IconComponent className="w-5 sm:w-6 h-5 sm:h-6 text-neon-pink" />
                   </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-gray-400 font-medium">{info.title}</p>
-                    <p className="text-lg font-semibold text-white group-hover:text-neon-pink transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs sm:text-sm text-gray-400 font-medium">{info.title}</p>
+                    <p className="text-sm sm:text-lg font-semibold text-white group-hover:text-neon-pink transition-colors break-words">
                       {info.value}
                     </p>
                   </div>
@@ -146,10 +146,10 @@ const Contact = () => {
             {/* Social Links */}
             <motion.div
               variants={itemVariants}
-              className="mt-8"
+              className="mt-4 lg:mt-8"
             >
-              <p className="text-sm text-gray-400 font-medium mb-4">Connect With Me</p>
-              <div className="flex gap-4">
+              <p className="text-xs sm:text-sm text-gray-400 font-medium mb-4">Connect With Me</p>
+              <div className="flex gap-3 sm:gap-4">
                 {socialLinks.map((social, idx) => {
                   const IconComponent = social.icon
                   return (
@@ -160,10 +160,10 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.2, rotate: 10 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`p-4 glass-effect rounded-full ${social.color} hover:shadow-lg transition-all neon-glow-blue`}
+                      className={`p-3 sm:p-4 glass-effect rounded-full ${social.color} hover:shadow-lg transition-all neon-glow-blue`}
                       aria-label={social.label}
                     >
-                      <IconComponent className="w-6 h-6" />
+                      <IconComponent className="w-5 sm:w-6 h-5 sm:h-6" />
                     </motion.a>
                   )
                 })}
@@ -178,7 +178,7 @@ const Contact = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="glass-effect p-8 rounded-2xl space-y-6"
+            className="glass-effect p-6 sm:p-8 rounded-2xl space-y-6"
           >
             {/* Success Message */}
             {submitted && (
@@ -194,7 +194,7 @@ const Contact = () => {
 
             {/* Name Field */}
             <motion.div variants={itemVariants}>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                 Full Name
               </label>
               <input
@@ -204,14 +204,14 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your Name"
-                className="w-full px-4 py-3 bg-dark-secondary border border-gray-600 rounded-lg focus:outline-none focus:border-neon-pink text-white placeholder-gray-500 transition-colors"
+                className="w-full px-4 py-2 sm:py-3 bg-dark-secondary border border-gray-600 rounded-lg focus:outline-none focus:border-neon-pink text-white placeholder-gray-500 transition-colors text-sm"
                 required
               />
             </motion.div>
 
             {/* Email Field */}
             <motion.div variants={itemVariants}>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                 Email Address
               </label>
               <input
@@ -221,14 +221,14 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="your@email.com"
-                className="w-full px-4 py-3 bg-dark-secondary border border-gray-600 rounded-lg focus:outline-none focus:border-neon-pink text-white placeholder-gray-500 transition-colors"
+                className="w-full px-4 py-2 sm:py-3 bg-dark-secondary border border-gray-600 rounded-lg focus:outline-none focus:border-neon-pink text-white placeholder-gray-500 transition-colors text-sm"
                 required
               />
             </motion.div>
 
             {/* Subject Field */}
             <motion.div variants={itemVariants}>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                 Subject
               </label>
               <input
@@ -238,14 +238,14 @@ const Contact = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder="Project inquiry"
-                className="w-full px-4 py-3 bg-dark-secondary border border-gray-600 rounded-lg focus:outline-none focus:border-neon-pink text-white placeholder-gray-500 transition-colors"
+                className="w-full px-4 py-2 sm:py-3 bg-dark-secondary border border-gray-600 rounded-lg focus:outline-none focus:border-neon-pink text-white placeholder-gray-500 transition-colors text-sm"
                 required
               />
             </motion.div>
 
             {/* Message Field */}
             <motion.div variants={itemVariants}>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                 Message
               </label>
               <textarea
@@ -255,7 +255,7 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="Tell me about your project..."
                 rows={4}
-                className="w-full px-4 py-3 bg-dark-secondary border border-gray-600 rounded-lg focus:outline-none focus:border-neon-pink text-white placeholder-gray-500 transition-colors resize-none"
+                className="w-full px-4 py-2 sm:py-3 bg-dark-secondary border border-gray-600 rounded-lg focus:outline-none focus:border-neon-pink text-white placeholder-gray-500 transition-colors resize-none text-sm"
                 required
               />
             </motion.div>
@@ -266,9 +266,9 @@ const Contact = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="w-full px-6 py-3 bg-gradient-to-r from-neon-pink to-neon-purple text-white font-bold rounded-lg neon-glow-pink hover-glow transition-all flex items-center justify-center gap-2"
+              className="w-full px-6 py-2 sm:py-3 bg-gradient-to-r from-neon-pink to-neon-purple text-white font-bold rounded-lg neon-glow-pink hover-glow transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
             >
-              <FiSend className="w-5 h-5" />
+              <FiSend className="w-4 sm:w-5 h-4 sm:h-5" />
               Send Message
             </motion.button>
 

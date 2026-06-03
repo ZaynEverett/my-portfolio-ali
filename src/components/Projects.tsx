@@ -42,7 +42,7 @@ const Projects = () => {
       title: 'Shoe Website',
       description: 'An e-commerce website for shoes with modern design and features.',
       image: '/Agency/shoe website.PNG',
-      tech: ['React', 'Tailwind CSS', 'Vite'],
+      tech: ['HTML', 'CSS', 'JavaScript'],
       type: 'Web',
       liveLink: 'https://shoe-website-two.vercel.app/',
       githubLink: '#',
@@ -52,7 +52,7 @@ const Projects = () => {
       title: 'MUSIC WORLD',
       description: 'A music streaming platform with playlists and user interactions.',
       image: '/Agency/musicworld.png',
-      tech: ['React', 'Express.js', 'MongoDB'],
+      tech: ['HTML', 'CSS', 'JavaScript', 'React'],
       type: 'Web',
       liveLink: 'https://music-world-pi.vercel.app/',
       githubLink: 'https://github.com/codecraft905-ui/MUSIC-WORLD.git',
@@ -72,7 +72,7 @@ const Projects = () => {
       title: 'Cryptix Landing Page',
       description: 'A landing page for Cryptix, a cryptocurrency platform.',
       image: '/Agency/cryptix.png',
-      tech: ['React', 'Tailwind CSS'],
+      tech: ['HTML', 'CSS', 'JavaScript'],
       type: 'Web',
       liveLink: 'https://cryptix-landingpage.vercel.app/',
       githubLink: '#',
@@ -131,7 +131,7 @@ const Projects = () => {
 
         {/* Filter Buttons */}
         <motion.div
-          className="flex justify-center gap-4 mb-12"
+          className="flex justify-center gap-2 sm:gap-4 mb-12 flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -143,7 +143,7 @@ const Projects = () => {
               onClick={() => setFilter(type)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+              className={`px-4 sm:px-6 py-2 text-xs sm:text-sm rounded-full font-semibold transition-all ${
                 filter === type
                   ? 'bg-neon-blue text-dark-bg'
                   : 'border-2 border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-dark-bg'
@@ -169,7 +169,7 @@ const Projects = () => {
               className="group glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300"
             >
               {/* Image Container */}
-              <div className="relative h-48 overflow-hidden bg-dark-secondary">
+              <div className="relative h-40 sm:h-48 overflow-hidden bg-dark-secondary">
                 <motion.img
                   src={project.image}
                   alt={project.title}
@@ -184,14 +184,14 @@ const Projects = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neon-pink transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-neon-pink transition-colors">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-400 mb-4">
+                <p className="text-xs sm:text-sm text-gray-400 mb-4">
                   {project.description}
                 </p>
 
@@ -200,7 +200,7 @@ const Projects = () => {
                   {project.tech.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="text-xs px-3 py-1 bg-dark-secondary rounded-full text-neon-blue border border-neon-blue border-opacity-30"
+                      className="text-xs px-2 sm:px-3 py-1 bg-dark-secondary rounded-full text-neon-blue border border-neon-blue border-opacity-30"
                     >
                       {tech}
                     </span>
@@ -208,14 +208,14 @@ const Projects = () => {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-4">
+                <div className="flex gap-3 sm:gap-4">
                   <motion.a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-4 py-2 bg-neon-pink text-white rounded-lg font-semibold text-sm hover:shadow-lg transition-all"
+                    className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-neon-pink text-white rounded-lg font-semibold text-xs sm:text-sm hover:shadow-lg transition-all"
                   >
                     <FiExternalLink className="w-4 h-4" />
                     Live Demo
@@ -226,7 +226,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 px-4 py-2 border-2 border-neon-blue text-neon-blue rounded-lg font-semibold text-sm hover:bg-neon-blue hover:text-dark-bg transition-all"
+                    className="flex items-center gap-2 px-3 sm:px-4 py-2 border-2 border-neon-blue text-neon-blue rounded-lg font-semibold text-xs sm:text-sm hover:bg-neon-blue hover:text-dark-bg transition-all"
                   >
                     <FiGithub className="w-4 h-4" />
                     GitHub
