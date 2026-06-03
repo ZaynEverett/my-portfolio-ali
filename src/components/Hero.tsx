@@ -35,6 +35,7 @@ const Hero = () => {
 
   return (
     <section
+      id="home"
       onMouseMove={handleMouseMove}
       className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden"
     >
@@ -62,7 +63,7 @@ const Hero = () => {
         {/* LEFT SIDE */}
         <div>
           <p className="text-xs sm:text-sm md:text-base text-neon-blue mb-4 font-semibold">
-            Welcome to my universe 🚀
+            Welcome to my portfolio
           </p>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-6">
@@ -133,7 +134,7 @@ const Hero = () => {
         </div>
 
         {/* RIGHT SIDE VISUAL */}
-        <div className="hidden md:flex relative h-[300px] md:h-[400px] items-center justify-center">
+        <div className="relative h-[300px] md:h-[400px] flex items-center justify-center">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
