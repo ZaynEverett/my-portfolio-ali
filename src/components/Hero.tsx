@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import heroPhoto from "../../Image/file_00000000463c7207bc2d72be1c7ac26e.png";
+import bgImage from "../../Image/BGImage.png";
 
 const roles = [
   "Creative Developer",
@@ -38,10 +38,13 @@ const Hero = () => {
     <section
       id="home"
       onMouseMove={handleMouseMove}
-      className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `url(${heroPhoto})`,
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
       }}
+      className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden"
     >
       {/* 🔥 Mouse Glow */}
       <motion.div
@@ -55,7 +58,7 @@ const Hero = () => {
       />
 
       {/* 🌌 Background Overlay */}
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-black/40 md:bg-black/55" />
 
       {/* ✨ Content */}
       <motion.div
@@ -138,17 +141,25 @@ const Hero = () => {
         </div>
 
         {/* RIGHT SIDE VISUAL */}
-        <div className="relative h-[300px] md:h-[400px] flex items-center justify-center">
+        <div className="relative h-[320px] md:h-[420px] flex items-center justify-center">
+          <div className="absolute inset-0 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur-xl">
+            <img
+              src={bgImage}
+              alt="Ali Ahmed portrait"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div className="absolute inset-0 rounded-[2rem] ring-1 ring-white/10" />
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-            className="w-48 md:w-72 h-48 md:h-72 border border-purple-500/20 rounded-full"
+            className="hidden md:block absolute w-80 h-80 border border-purple-500/20 rounded-full"
           />
 
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-            className="absolute w-64 md:w-96 h-64 md:h-96 border border-pink-500/10 rounded-full"
+            className="hidden md:block absolute w-96 h-96 border border-pink-500/10 rounded-full"
           />
         </div>
       </motion.div>
