@@ -185,16 +185,14 @@ button, a, [role="button"] {
   background-repeat: no-repeat;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 768px) {
   .hero-bg {
-    background-position: center 25%;
-    background-size: 120%;
+    background-position: center top;
   }
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1023px) {
   .hero-bg {
     background-position: center 40%;
-    background-size: 110%;
   }
 }
