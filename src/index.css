@@ -177,3 +177,24 @@ button, a, [role="button"] {
   animation: fade-in 0.8s ease-out;
   --animation-delay: var(--delay, 0s);
 }
+
+/* Hero background responsive adjustments */
+.hero-bg {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 639px) {
+  .hero-bg {
+    background-position: center 25%;
+    background-size: 120%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-bg {
+    background-position: center 40%;
+    background-size: 110%;
+  }
+}
