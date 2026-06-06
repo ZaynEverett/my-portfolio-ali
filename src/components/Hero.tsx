@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import heroPhoto from "../../Image/file_00000000463c7207bc2d72be1c7ac26e.png";
 
 const roles = [
   "Creative Developer",
@@ -37,7 +38,10 @@ const Hero = () => {
     <section
       id="home"
       onMouseMove={handleMouseMove}
-      className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(${heroPhoto})`,
+      }}
     >
       {/* 🔥 Mouse Glow */}
       <motion.div
