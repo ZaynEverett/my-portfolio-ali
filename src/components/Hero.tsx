@@ -40,7 +40,7 @@ const Hero = () => {
       onMouseMove={handleMouseMove}
       className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(${heroPhoto})`,
+        backgroundImage: `url(${heroPhoto})`,
       }}
     >
       {/* 🔥 Mouse Glow */}
@@ -54,8 +54,8 @@ const Hero = () => {
         }}
       />
 
-      {/* 🌌 Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-[#111]" />
+      {/* 🌌 Background Overlay */}
+      <div className="absolute inset-0 bg-black/65" />
 
       {/* ✨ Content */}
       <motion.div
