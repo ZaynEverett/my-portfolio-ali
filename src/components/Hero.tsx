@@ -65,7 +65,7 @@ const Hero = () => {
         initial={{ opacity: 0, scale: 0.8, filter: "blur(20px)" }}
         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
         transition={{ duration: 1.2 }}
-        className="relative z-20 max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center"
+        className="relative z-20 max-w-4xl w-full grid grid-cols-1 gap-8 items-center mx-auto"
       >
         {/* LEFT SIDE */}
         <div>
@@ -140,28 +140,7 @@ const Hero = () => {
 </div>
         </div>
 
-        {/* RIGHT SIDE VISUAL - decorative card (no floating images) */}
-        <div className="relative h-[320px] md:h-[420px] flex items-center justify-center">
-          <div className="absolute inset-0 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-black/20 via-white/5 to-black/10 backdrop-blur-xl flex items-center justify-center">
-            <div className="flex items-center justify-center flex-col gap-4">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-pink-500/40 to-purple-500/40 flex items-center justify-center text-white text-2xl font-bold select-none">
-                AH
-              </div>
-            </div>
-          </div>
-          <div className="absolute inset-0 rounded-[2rem] ring-1 ring-white/10" />
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-            className="hidden md:block absolute w-80 h-80 border border-purple-500/20 rounded-full"
-          />
-
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-            className="hidden md:block absolute w-96 h-96 border border-pink-500/10 rounded-full"
-          />
-        </div>
+        {/* Right visual removed to keep background clean and focused */}
       </motion.div>
 
       {/* 🔻 Scroll Indicator */}
