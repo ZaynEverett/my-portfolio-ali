@@ -58,14 +58,14 @@ const Hero = () => {
       />
 
       {/* 🌌 Background Overlay */}
-      <div className="absolute inset-0 bg-black/40 md:bg-black/55" />
+      <div className="absolute inset-0 bg-black/40 md:bg-black/55 z-0 pointer-events-none" />
 
       {/* ✨ Content */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8, filter: "blur(20px)" }}
         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
         transition={{ duration: 1.2 }}
-        className="relative z-10 max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center"
+        className="relative z-20 max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center"
       >
         {/* LEFT SIDE */}
         <div>
@@ -140,14 +140,14 @@ const Hero = () => {
 </div>
         </div>
 
-        {/* RIGHT SIDE VISUAL */}
+        {/* RIGHT SIDE VISUAL - decorative card (no floating images) */}
         <div className="relative h-[320px] md:h-[420px] flex items-center justify-center">
-          <div className="absolute inset-0 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur-xl">
-            <img
-              src={bgImage}
-              alt="Ali Ahmed portrait"
-              className="w-full h-full object-cover object-center"
-            />
+          <div className="absolute inset-0 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-black/20 via-white/5 to-black/10 backdrop-blur-xl flex items-center justify-center">
+            <div className="flex items-center justify-center flex-col gap-4">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-pink-500/40 to-purple-500/40 flex items-center justify-center text-white text-2xl font-bold select-none">
+                AH
+              </div>
+            </div>
           </div>
           <div className="absolute inset-0 rounded-[2rem] ring-1 ring-white/10" />
           <motion.div
