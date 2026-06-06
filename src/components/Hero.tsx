@@ -34,6 +34,23 @@ const Hero = () => {
     mouseY.set(e.clientY);
   };
 
+  // Responsive background position to keep subject visible on smaller screens
+  const [bgPos, setBgPos] = useState("center center");
+
+  useEffect(() => {
+    const updateBg = () => {
+      if (typeof window === "undefined") return;
+      const w = window.innerWidth;
+      if (w < 640) setBgPos("center top"); // mobile: show top of image
+      else if (w < 1024) setBgPos("center 40%"); // tablet: slightly shifted
+      else setBgPos("center center"); // desktop: centered
+    };
+
+    updateBg();
+    window.addEventListener("resize", updateBg);
+    return () => window.removeEventListener("resize", updateBg);
+  }, []);
+
   return (
     <section
       id="home"
@@ -41,7 +58,7 @@ const Hero = () => {
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
-        backgroundPosition: "center center",
+        backgroundPosition: bgPos,
         backgroundRepeat: "no-repeat",
       }}
       className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden"
